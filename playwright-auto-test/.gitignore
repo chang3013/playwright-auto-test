@@ -1,0 +1,49 @@
+# node_modules - 의존성 폴더
+node_modules/
+
+# pnpm, npm, yarn lockfiles (선택)
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# 빌드 결과물 (tsc, webpack 등)
+dist/
+build/
+
+# Playwright 테스트 결과
+test-results/
+playwright-report/
+allure-results/
+allure-report/
+*.log
+
+# 환경 변수 파일
+.env
+.env.local
+.env.*.local
+
+# OS 별 불필요 파일
+.DS_Store
+Thumbs.db
+
+# 앱 설치파일 (Android 등)
+*.apk
+*.ipa
+
+# VSCode 및 IDE 설정
+.vscode/
+.idea/
+
+# Docker 관련 불필요한 파일
+**/.docker
+
+# 기타 캐시
+.cache/
+.nyc_output/
+coverage/
+
+# 로그 파일
+*.log
+*.pid
+*.gz
+*.tgz
