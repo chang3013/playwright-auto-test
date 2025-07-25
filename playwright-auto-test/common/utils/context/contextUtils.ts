@@ -92,7 +92,7 @@ export class ContextUtils {
   // ): Promise<{ success: boolean; wsEndpoint?: string }> {
   //   const contexts = await driver.getContexts();
   //   const stringContexts = contexts.map(ctx => (typeof ctx === 'string' ? ctx : ctx.id ?? ''));
-  //   const targetContext = stringContexts.find(ctx => ctx.includes('WEBVIEW_com.lguplus.mobile.cs'));
+  //   const targetContext = stringContexts.find(ctx => ctx.includes('WEBVIEW_'));
   //   if (!targetContext) {
   //     this.logger.warn(`[ContextUtils][${this.poc}] WEBVIEW 컨텍스트가 없습니다: ${stringContexts}`);
   //     return { success: false };

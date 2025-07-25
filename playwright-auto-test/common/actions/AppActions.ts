@@ -142,17 +142,6 @@ export class AppActions {
       throw e;
     }
   }
-  //웹전환로직추가
-  public async webChange(): Promise<void> {
-    try {
-      await this.driver.switchContext('WEBVIEW_com.lguplus.mobile.cs');
-      console.log('switched to WEBVIEW_com.lguplus.mobile.cs');
-    } catch (e) {
-      console.error('WebView 컨텍스트 전환 실패', e);
-      throw e;
-    }
-  }
-
   //양쪽전환
   public async changePage(): Promise<void> {
     try {

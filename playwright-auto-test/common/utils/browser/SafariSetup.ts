@@ -93,12 +93,12 @@ export class SafariSetup {
 
       this.logger.info(`[${this.poc}] Safari 캐시 정리 완료`);
 
-      await this.driver.activateApp('com.lguplus.mobile.cs');
-      await this.switchContext('WEBVIEW_com.lguplus.mobile.cs');
+      await this.driver.activateApp('번들아이디');
+      await this.switchContext('WEBVIEW_');
     } catch (e) {
       this.logger.error(`[${this.poc}] Safari 캐시 정리 중 예외 발생: ${e}`);
-      await this.driver.activateApp('com.lguplus.mobile.cs');
-      await this.switchContext('WEBVIEW_com.lguplus.mobile.cs');
+      await this.driver.activateApp('번들아이디');
+      await this.switchContext('WEBVIEW_');
     }
   }
 

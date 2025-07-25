@@ -87,8 +87,8 @@ export const EXPLICIT_WAIT = 20; // sec
  */
 export const BASE_URLS: Record<string, string> = {
   development: 'http://localhost:3000',
-  staging: 'https://www.lguplus.com',
-  production: 'https://www.lguplus.com',
+  staging: 'URL쓰는곳',
+  production: 'URL쓰는곳',
 };
 export const BASE_URL = BASE_URLS[ENV];
 

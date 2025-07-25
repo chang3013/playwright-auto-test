@@ -15,7 +15,7 @@ export const slackConfig: SlackConfig = {
   SLACK_MENTION_ID: process.env.SLACK_MENTION_ID || '',
   SLACK_MENTION_CHANNEL: process.env.SLACK_MENTION_CHANNEL || '',
   SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL || '',
-  SLACK_FILES_UPLOAD_URL: 'https://lgdigitalcommerce.slack.com/api/files.upload',
+  SLACK_FILES_UPLOAD_URL: '',
 };
 
 /**
@@ -41,11 +41,11 @@ export const emailConfig: EmailConfig = {
  * PubSub 설정
  */
 export const PUBSUB = {
-  PROJECT_ID: process.env.PUBSUB_PROJECT_ID || 'gcp-dev-uhdc-id',
-  TOPIC_ID: process.env.PUBSUB_TOPIC_ID || 'qa-test',
+  PROJECT_ID: process.env.PUBSUB_PROJECT_ID || 'projectID',
+  TOPIC_ID: process.env.PUBSUB_TOPIC_ID || 'topicID',
   PUBLISHER_AUDIENCE:
     process.env.PUBSUB_PUBLISHER_AUDIENCE ||
-    'https://pubsub.googleapis.com/google.pubsub.v1.Publisher',
+    'pubsubURL',
 };
 
 /**
