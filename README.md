@@ -15,6 +15,15 @@ Android/iOS 앱과 모바일웹, PC웹을 포함한 풀 E2E 환경을 구성하�
 │ globalTearDown.ts - 테스트 종료(각 POC) 시, 테스트 환경 정리 제어
 
 
+#### 내가 기여한 항목
+ - ios-app : ios 연동 및 자동화 스크립트 작성
+ - appium-server : aos,ios 모두 작성
+ - common/fixture/appfixture 작성
+ -  globalSetup.ts, globalTearDown.ts 작성
+ -  common/initializers : iosTestEnv,aosTestEnv
+ -  
+
+
 appium-server  관련 특이사항
  - ios-app/android-app 실행 전 health-check를 통해 appium server 먼저 컨테이너 실행 후 진행하도록 함
 
