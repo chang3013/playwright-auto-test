@@ -1,0 +1,55 @@
+{
+  "name": "@myorg/common",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "description": "Common Utilities For The Auto Test Project",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist",
+    "actions",
+    "assets",
+    "components",
+    "config",
+    "constants",
+    "e2e",
+    "fixtures",
+    "formatters",
+    "handlers",
+    "initializers",
+    "locators",
+    "logger",
+    "notifications",
+    "types",
+    "utils"
+  ],
+  "keywords": [
+    "typescript",
+    "common",
+    "utilities",
+    "helpers",
+    "shared",
+    "config",
+    "constants",
+    "logger",
+    "formatters",
+    "handlers"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "appium": "^2.17.1",
+    "webdriverio": "^9.12.5",
+    "winston": "^3.17.0",
+    "get-port": "^7.1.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/get-port": "^4.2.0"
+  }
+}

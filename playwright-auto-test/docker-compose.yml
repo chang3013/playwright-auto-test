@@ -1,0 +1,167 @@
+# Description : docker-compose.yml - 📌 Docker 실행 환경 정의 파일
+# Date : 2025-04-10
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  e2e_results:
+    driver: local
+
+services:
+  # Playwright 테스트 실행
+  # playwright:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   container_name: playwright_tests
+  #   restart: always
+  #   networks:
+  #     - app_network
+  #   depends_on:
+  #     common:
+  #       condition: service_started
+  #   volumes:
+  #     - ./test-results:/app/test-results
+  #   working_dir: /app
+  #   environment:
+  #     - HEADLESS=${HEADLESS:-1}
+  #     - DEBUG=${DEBUG:-0}
+  #   command: ['npx', 'playwright', 'test']
+  #   shm_size: '2gb'
+
+  # E2E 테스트 - PC Web
+  e2e-pc:
+    build:
+      context: .
+      dockerfile: ./e2e/pc-web/Dockerfile
+    environment:
+      - NODE_ENV=test
+    container_name: e2e-pc
+    restart: always
+    command: pnpm run test:pc
+    depends_on:
+      common:
+        condition: service_started
+    networks:
+      - app_network
+    volumes:
+      - ./e2e/pc-web/results:/app/results
+
+  # E2E 테스트 - Mobile Web
+  e2e-mw:
+    build:
+      context: .
+      dockerfile: ./e2e/pc-mobile-web/Dockerfile
+    environment:
+      - NODE_ENV=test
+    container_name: e2e-mw
+    restart: always
+    command: pnpm run test:mw
+    depends_on:
+      common:
+        condition: service_started
+    networks:
+      - app_network
+    volumes:
+      - ./e2e/mobile-web/results:/app/results
+
+  # E2E 테스트 - Android (AOS)
+  e2e-aos:
+    build:
+      context: .
+      dockerfile: ./e2e/android-app/Dockerfile
+    environment:
+      - NODE_ENV=test
+      - APPIUM_URL=http://aos-appium-server:4723/wd/hub
+    container_name: e2e-aos
+    restart: always
+    command: pnpm run test:aos
+    depends_on:
+      # aos-appium-server:
+      #   condition: service_healthy
+      common:
+        condition: service_started
+    networks:
+      - app_network
+    volumes:
+      - ./e2e/android/results:/app/results
+
+  # E2E 테스트 - iOS
+  e2e-ios:
+    build:
+      context: .
+      dockerfile: ./e2e/ios-app/Dockerfile
+    environment:
+      - NODE_ENV=test
+      - APPIUM_URL=http://ios-appium-server:4723/wd/hub
+    container_name: e2e-ios
+    restart: always
+    command: pnpm run test:ios
+    depends_on:
+      # ios-appium-server:
+      #   condition: service_healthy
+      common:
+        condition: service_started
+    networks:
+      - app_network
+    volumes:
+      - ./e2e/ios/results:/app/results
+
+  # # Pub/Sub 서비스
+  # pubsub:
+  #   build:
+  #     context: .
+  #     dockerfile: ./pubsub/Dockerfile
+  #   container_name: pubsub
+  #   restart: always
+  #   depends_on:
+  #     common:
+  #       condition: service_started
+  #   networks:
+  #     - app_network
+  #   volumes:
+  #     - ./pubsub/data:/app/data
+  #   environment:
+  #     - NODE_ENV=production
+  #     - PUBSUB_EMULATOR_HOST=0.0.0.0:8085
+  #   ports:
+  #     - '8085:8085'
+  #   healthcheck:
+  #     test: ['CMD', 'curl', '-f', 'http://localhost:8085']
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+
+  # iOS Appium 서버
+  ios-appium-server:
+    container_name: ios-appium-server
+    build:
+      context: ./e2e/ios-appium-server
+    ports:
+      - '4723:4723'
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:4723/wd/hub/status']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app_network
+    volumes:
+      - ./logs/ios-appium:/app/logs
+
+  # Android Appium 서버
+  aos-appium-server:
+    container_name: aos-appium-server
+    build:
+      context: ./e2e/aos-appium-server
+    ports:
+      - '4725:4723' # 내부는 4723, 외부는 4725
+    healthcheck:
+      test: ['CMD', 'curl', '-f', 'http://localhost:4723/wd/hub/status']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - app_network

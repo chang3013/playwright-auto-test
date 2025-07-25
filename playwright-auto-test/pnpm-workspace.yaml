@@ -1,0 +1,4 @@
+packages:
+  - 'common'
+  - 'e2e/*'
+  - 'pubsub'

@@ -1,0 +1,21 @@
+{
+  "name": "@your-org/pc-mobile-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "E2E PC-mobile-web testing module",
+  "main": "index.js",
+  "type": "module",
+  "types": "index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "playwright test",
+    "lint": "eslint . --config ../../eslint.config.mjs --fix"
+  },
+  "dependencies": {
+    "@your-org/common": "file:../../common"
+  },
+  "devDependencies": {
+    "playwright": "^1.51.0",
+    "typescript": "^5.8.2"
+  }
+}

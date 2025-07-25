@@ -1,0 +1,19 @@
+{
+  "name": "ios-appium-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node --loader ts-node/esm src/index.ts"
+  },
+  "dependencies": {
+    "appium": "^2.17.1",
+    "appium-chromedriver": "^7.0.14",
+    "appium-wait-plugin": "^3.0.2",
+    "appium-xcuitest-driver": "^9.2.0"
+  },
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}

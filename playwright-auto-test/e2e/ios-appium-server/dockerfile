@@ -1,0 +1,22 @@
+FROM node:18
+
+# pnpm 설치
+RUN corepack enable && corepack prepare pnpm@8.14.0 --activate
+
+WORKDIR /app
+
+# package.json 및 tsconfig 복사
+COPY package.json ./
+COPY tsconfig.json ./
+
+# (pnpm-lock.yaml이 없는 경우엔 이 줄 삭제)
+COPY pnpm-lock.yaml ./
+
+# 패키지 설치
+RUN pnpm install --no-frozen-lockfile
+
+# 소스 복사
+COPY . .
+
+# ts-node로 실행 (ESM 지원)
+CMD ["node", "--loader", "ts-node/esm", "src/index.ts"]

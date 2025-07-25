@@ -1,0 +1,12 @@
+FROM node:18
+
+WORKDIR /app
+
+COPY . .
+
+RUN corepack enable \
+  && corepack prepare pnpm@8.15.5 --activate \
+  && pnpm install
+
+# ts-node로 ESM 방식 실행
+CMD ["node", "--loader", "ts-node/esm", "src/index.ts"]
