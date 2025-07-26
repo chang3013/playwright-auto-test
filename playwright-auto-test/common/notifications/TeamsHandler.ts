@@ -1,6 +1,5 @@
 /**
  * Description : TeamsHandler.ts - 📌 Microsoft Teams 메시지 전송을 처리하는 TeamsHandler 클래스
- * Author : Shiwoo Min
  * Date : 2025-04-10
  */
 import { teamsConfig } from '@common/config/notificationConfig';

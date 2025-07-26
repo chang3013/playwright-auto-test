@@ -1,6 +1,5 @@
 /**
  * Description : node-global.d.ts - 📌 node 환경 설정 타입 정의
- * Author : Shiwoo Min
  * Date : 2025-04-03
  */
 declare namespace NodeJS {

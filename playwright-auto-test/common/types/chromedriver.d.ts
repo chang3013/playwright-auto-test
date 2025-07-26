@@ -1,6 +1,5 @@
 /**
  * Description : chromedriver.d.ts - 📌 'chromedriver' 패키지를 TypeScript에서 사용할 수 있도록 모듈 선언
- * Author : Shiwoo Min
  * Date : 2025-04-03
  */
 declare module 'chromedriver' {

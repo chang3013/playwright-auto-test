@@ -1,6 +1,5 @@
 /**
  * Description : SafariSetup.ts - 📌 iOS 기반의 Safari 브라우저 및 설정 앱 자동화를 위한 유틸리티 클래스
- * Author : Shiwoo Min
  * Date : 2024-04-14
  */
 import { Logger } from '@common/logger/customLogger';

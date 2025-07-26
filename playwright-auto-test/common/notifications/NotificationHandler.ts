@@ -1,6 +1,5 @@
 /**
  * Description : NotificationHandler.ts - 📌 POC 기반 테스트 메시지 전송 핸들러
- * Author : Shiwoo Min
  * Date : 2025-04-11
  */
 import { Logger } from '@common/logger/customLogger';

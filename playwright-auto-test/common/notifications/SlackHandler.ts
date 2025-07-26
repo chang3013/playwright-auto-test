@@ -1,6 +1,5 @@
 /**
  * Description : SlackHandler.ts - 📌 Slack 메시지 전송, 에러, 파일 업로드, Thread 관리 통합 핸들러
- * Author : Shiwoo Min
  * Date : 2025-04-12
  */
 import { slackConfig } from '@common/config/notificationConfig';

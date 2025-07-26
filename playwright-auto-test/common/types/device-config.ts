@@ -1,6 +1,5 @@
 /**
  * Description : device-config.ts - 📌 Appium 옵션 상세 설정을 정의하는 인터페이스
- * Author : Shiwoo Min
  * Date : 2025-04-12
  */
 

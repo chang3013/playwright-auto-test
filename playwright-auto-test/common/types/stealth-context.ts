@@ -1,6 +1,5 @@
 /**
  * Description : stealth-context.ts - 📌 StealthContext 옵션 타입 정의
- * Author : Shiwoo Min
  * Date : 2025-04-11
  */
 import type { Platform } from '@common/types/platform-types';

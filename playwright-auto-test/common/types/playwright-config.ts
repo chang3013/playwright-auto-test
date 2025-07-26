@@ -1,6 +1,5 @@
 /**
  * Description : playwright-config.ts - 📌 Playwright 런타임 설정 관련 타입
- * Author : Shiwoo Min
  * Date : 2025-04-11
  */
 import type { AllPocList, POCType } from '@common/types/platform-types';

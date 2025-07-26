@@ -1,6 +1,5 @@
 /**
  * Description : test-context.d.ts - 📌 테스트 실행 환경 및 사용자 정보를 담는 공통 컨텍스트 인터페이스
- * Author : Shiwoo Min
  * Date : 2025-04-04
  */
 import type { Platform, UIType } from '@common/types/platform-types';

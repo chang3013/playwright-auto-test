@@ -1,6 +1,5 @@
 /**
  * Description : ChromeSetup.ts - 📌 Android 기반의 Chrome 브라우저 초기 셋업 자동화 유틸리티
- * Author : Shiwoo Min
  * Date : 2024-04-14
  */
 import { Logger } from '@common/logger/customLogger';

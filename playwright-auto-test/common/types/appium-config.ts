@@ -1,6 +1,5 @@
 /**
  * Description : appium-config.ts - 📌 Appium + 브라우저 기반 설정을 위한 타입 정의
- * Author : Shiwoo Min
  * Date : 2025-04-08
  */
 

@@ -1,6 +1,5 @@
 /**
  * Description : EmailHandler.ts - 📌 NotificationHandler 클래스를 사용하여 기본 메시지 전송 로직을 확장
- * Author : Shiwoo Min
  * Date : 2025-04-10
  */
 import { emailConfig } from '@common/config/notificationConfig';
